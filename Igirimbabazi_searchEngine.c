@@ -9,6 +9,8 @@ typedef struct {
   int test3;
   int average;
 } student_t;
+
+//functions prototypes
 void mainMenu(int *N, int *sort_array, student_t *studentdata);
 void save(int *N, int *sort_array, student_t *studentdata);
 void add (int *N, int *sort_array, student_t *studentdata);
@@ -30,11 +32,11 @@ int main(void){
   int data; 
   data = 0;
   student_t studentdata[50]; // the struct array containing the data
-  char junkc;//junk characater
+  char junkc;
   char option;
   char filename[50]; 
   printf("- Enter [a] to give a file name\n- enter any char or key to use default file\n- Your input: "); 
-  scanf("%c", &option);//scaning 
+  scanf("%c", &option);
   scanf ("%c", &junkc);
   if(option == 'a'){ 
     printf("Enter the name of the file:  ");
@@ -53,7 +55,7 @@ int main(void){
     i++;
     data++; 
     }
-  fclose(file);//closing file
+  fclose(file);
   }
   }
   else{
@@ -89,7 +91,6 @@ void display(int *N, int *sort_array, student_t *studentdata){
   int i;
 
   printf("\n");
-  //data entries
   printf ("\n Your Current data is:\n\n");
   printf("\n Firstname %5s Lastname %5s Test1 %5s Test2 %5s Test3 %5s Average\n\n", "", "", "", "", "");
   for(i = 0; i < *N; i++){
@@ -132,9 +133,9 @@ void sortAverage(int *N, int *sort_array, student_t *studentdata){
       swap = sort_array[j]; 
       sort_array[j] = sort_array[j+1];  
       sort_array[j+1] = swap; 
-      } 
-    } 
-    }   
+          } 
+        } 
+      }   
     display(N, sort_array, studentdata);//call for function that prints the  sort studentdata 
     printf("\n");
     } 
@@ -149,8 +150,8 @@ void sortAverage(int *N, int *sort_array, student_t *studentdata){
         swap = sort_array[j]; 
         sort_array[j] = sort_array[j+1];  
         sort_array[j+1]= swap; 
-    } 
-    } 
+        } 
+      } 
     } 
     display(N, sort_array, studentdata); 
   } 
@@ -175,9 +176,9 @@ void sortFirstname(int *N, int *sort_array, student_t *studentdata){
           swap = sort_array[j]; 
           sort_array[j] = sort_array[j+1];  
           sort_array[j+1] = swap; 
+          } 
+        } 
       } 
-      } 
-    } 
     display(N, sort_array, studentdata); 
     } 
     //sorting from a to z
@@ -197,7 +198,7 @@ void sortFirstname(int *N, int *sort_array, student_t *studentdata){
     } 
 } 
 
-//function definitionn for sort 
+
 void sort(int *N, int *sort_array, student_t *studentdata){ 
   char userOption, junkc, junk[30]; 
   //giving the user options
@@ -246,7 +247,7 @@ void searchAverage(int *N, int *sort_studentdata, student_t *studentdata){
 
 if(foundData == 0){
   printf("No data was found!\n");
-}
+  }
   
 }
 
@@ -274,7 +275,7 @@ void searchTest1(int *N, int *sort_studentdata, student_t *studentdata){
 
 if(foundData == 0){
   printf("No data was found!\n");
-}
+  }
   
 }
 
@@ -330,9 +331,9 @@ else if(foundData == 1){//if data is only one just delete
   if(studentdata[i].average == num){
     for(j = i; j<*N; j++){
     studentdata[j] = studentdata[j+1];
+      }
     }
   }
-}
 }
 
 else{
@@ -387,9 +388,9 @@ else if(foundData == 1){
   if(studentdata[i].test1 == num){
     for(j = i; j<*N; j++){
     studentdata[j] = studentdata[j+1];
+      }
     }
   }
-}
 }
 
 else{
@@ -402,11 +403,11 @@ else{
       if(studentdata[i].test1 == num){
         for(j = i; j<*N; j++){
           studentdata[j] = studentdata[j+1];
+          }
         }
       }
     }
   }
-}
 *N = *N-foundData;
 }
 
