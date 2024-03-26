@@ -1,8 +1,8 @@
-Overview
+Overview:
 
 This C program provides functionality to read data from a file, delete records, and perform lookups or updates on the information stored in the file. The program uses a simple file format where each record represents information about an entity (e.g., a person) and consists of fields separated by a delimiter.
 
-Features
+Features:
 
 - Read File: The program can read data from the file and display it on the console.
 - Delete Record: You can delete a record from the file based on a specified key (e.g., name).
